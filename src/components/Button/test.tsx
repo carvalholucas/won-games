@@ -54,4 +54,26 @@ describe('<Button/>', () => {
     expect(screen.getByText(/click here/i)).toBeInTheDocument()
     expect(screen.getByTestId('icon')).toBeInTheDocument()
   })
+
+  it('should render an icon version', () => {
+    renderWithTheme(
+      <Button icon={
+        <AddShoppingCart data-testid="icon" />
+      }>Click here</Button>
+    )
+
+    expect(screen.getByText(/click here/i)).toBeInTheDocument()
+    expect(screen.getByTestId('icon')).toBeInTheDocument()
+  })
+
+  it('should render Button as a link', () => {
+    renderWithTheme(
+      <Button as="a" href="/link">Click here</Button>
+    )
+
+    expect(screen.getByRole('link', { name: /click here/i })).toHaveAttribute(
+      'href',
+      '/link'
+    )
+  })
 })
