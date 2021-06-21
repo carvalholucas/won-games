@@ -9,7 +9,10 @@ exports[`<Banner /> Should render correctly 1`] = `
   width: 100%;
   height: 23rem;
   background-color: #EAEAEA;
-  background-image: url(https://source.unsplash.com/user/willianjusten/1042x580) position:relative;
+  background-image: url(https://source.unsplash.com/user/willianjusten/1042x580);
+  background-position: center center;
+  background-size: cover;
+  position: relative;
 }
 
 .c2 {
@@ -67,7 +70,13 @@ exports[`<Banner /> Should render correctly 1`] = `
 }
 
 @media (max-width:1170px) {
+  .c0 .sc-AxjAm {
+    right: 0;
+  }
 
+  .c0 .sc-AxjAm::before {
+    display: none;
+  }
 }
 
 @media (min-width:768px) {
@@ -141,15 +150,5 @@ exports[`<Banner /> Should render correctly 1`] = `
       </span>
     </a>
   </div>
-</main>
-`;
-
-exports[`<Banner/> should render the heading 1`] = `
-<main
-  class=""
->
-  <h1>
-    Banner
-  </h1>
 </main>
 `;
